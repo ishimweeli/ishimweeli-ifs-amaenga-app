@@ -30,11 +30,12 @@
             <span class="fas fa-times"></span>
          </div>
          <form action="#">
-            <input type="search" class="search-data" placeholder="Search" required>
-            <button type="submit" class="fas fa-search"></button>
+            <input type="search" class="search-data"  id="search-id" placeholder="Search..." autocomplete="off"required>
+            <button type="submit" class="fas fa-search"  id="searchBar" onclick="search_sign()"></button>
          </form>
       </nav>  
     </div>
+    <div hidden id="spinner"></div>
 <div class="signContainer"></div>
 
     <div class="signLanguage">

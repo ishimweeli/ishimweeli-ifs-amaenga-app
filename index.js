@@ -537,23 +537,9 @@ searchBtn.onclick = () => {
   searchBtn.classList.add("hide");
 }
 
-
-
-function displayLoading() {
-  loader.classList.add("display");
-  // to stop loading after some time
-  setTimeout(() => {
-    loader.classList.remove("display");
-  }, 5000);
-}
-
-// hiding loading 
-function hideLoading() {
-  loader.classList.remove("display");
-}
 const containerComponents = document.getElementsByClassName('signLanguage');
+
 const displaySigns = async () => {
-  // displayLoading()
   const amarenga = await fetch('https://amarenga-backend.herokuapp.com/ifs/amarenga', {
     method: 'GET', // or 'PUT'
     headers: {
@@ -561,7 +547,9 @@ const displaySigns = async () => {
 
     },
   })
+
   const data = await amarenga.json()
+  // spinner.setAttribute('hidden', '');
   console.log(data)
   let renderItem = "";
   data.map(amarenga => {
@@ -590,29 +578,31 @@ const displaySigns = async () => {
   })
 }
 displaySigns()
+console.log(spinner)
 console.log(amarenga)
 
 
 
-// function search_sign() {
 
-//   let input = document.getElementById('searchbar').value
+function search_sign() {
 
-//   input = input.toLowerCase();
-//   let x = document.getElementsByClassName('polaroid');
-//   console.log(input);
-//   for (i = 0; i < x.length; i++) {
-//     if (!x[ i ].innerHTML.toLowerCase().includes(input)) {
-//       console.log('hello')
-//       x[ i ].style.display = "none";
-//     }
-//     else {
-//       console.log('hi')
-//       x[ i ].style.display = "inline-block";
-//     }
-//   }
+  let input = document.getElementById('search-id').value
 
-// }
+  input = input.toLowerCase();
+  let x = document.getElementsByClassName('polaroid');
+  console.log(input);
+  for (i = 0; i < x.length; i++) {
+    if (!x[ i ].innerHTML.toLowerCase().includes(input)) {
+      console.log('hello')
+      x[ i ].style.display = "none";
+    }
+    else {
+      console.log('hi')
+      x[ i ].style.display = "inline-block";
+    }
+  }
+
+}
 
 
 
