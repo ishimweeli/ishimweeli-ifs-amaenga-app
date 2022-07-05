@@ -537,9 +537,41 @@ searchBtn.onclick = () => {
   searchBtn.classList.add("hide");
 }
 
-const containerComponents = document.getElementsByClassName('signLanguage');
+// const containerComponents = document.getElementsByClassName('signLanguage');
+
+
+// selecting loading div
+const loader = document.querySelector("#loading");
+const inputPart = document.getElementById('inputPart');
+
+
+
+// showing loading
+function displayLoading() {
+  loader.classList.add("display");
+  // loaderr.classList.add("display");
+
+  // to stop loading after some time
+  // setTimeout(() => {
+  //     loader.classList.remove("display");
+  // }, 5000);
+}
+
+// hiding loading 
+function hideLoading() {
+  loader.classList.remove("display");
+  //     loaderr.classList.remove("display");
+  // 
+}
+
+function changeStyle() {
+  var element = document.getElementById("inputPart");
+  element.style.display = "none";
+}
+
 
 const displaySigns = async () => {
+
   const amarenga = await fetch('https://amarenga-backend.herokuapp.com/ifs/amarenga', {
     method: 'GET', // or 'PUT'
     headers: {
@@ -564,11 +596,12 @@ const displaySigns = async () => {
       <p class="sign">${irenga.french}</p>
       </div>
     </div>`
-      signContainer[ 0 ].innerHTML = renderItem
+
 
       // signContainer.appendChild(renderItem)
     })
-    signContainer.innerHTML = renderItem
+    signContainer[ 0 ].innerHTML = renderItem
+    // signContainer.innerHTML = renderItem
 
     // 
     // signContainer.
@@ -577,9 +610,6 @@ const displaySigns = async () => {
 
   })
 }
-displaySigns()
-console.log(spinner)
-console.log(amarenga)
 
 
 
@@ -603,6 +633,15 @@ function search_sign() {
   }
 
 }
+
+
+
+displaySigns()
+
+console.log(amarenga)
+
+
+
 
 
 
