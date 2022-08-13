@@ -4,7 +4,14 @@ const english = document.getElementById('english');
 const kinyarwanda = document.getElementById('kinyarwanda');
 const image = document.getElementById('image');
 
+var uploadField = document.getElementById("image");
 
+uploadField.onchange = function () {
+    if (this.files[ 0 ].size > 2000000) {
+        alert("File is too big! max 2mb");
+        this.value = "";
+    };
+};
 
 
 
