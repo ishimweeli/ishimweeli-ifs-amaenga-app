@@ -572,7 +572,7 @@ function changeStyle() {
 
 const displaySigns = async () => {
 
-  const amarenga = await fetch('https://amarenga-backend.herokuapp.com/ifs/amarenga', {
+  const amarenga = await fetch('https://amarenga-version01.herokuapp.com/amarenga', {
     method: 'GET', // or 'PUT'
     headers: {
       'Content-Type': 'application/json',

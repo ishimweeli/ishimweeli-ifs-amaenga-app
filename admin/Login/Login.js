@@ -13,7 +13,7 @@ const handleLogin = async (e) => {
         password: password.value
     }
     console.log(data);
-    const res = await fetch('http://localhost:4000/users/login', {
+    const res = await fetch('https://amarenga-version01.herokuapp.com/users/login', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',

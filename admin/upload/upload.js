@@ -59,7 +59,7 @@ const handleArticles = async (e) => {
 
     console.log(data)
 
-    await fetch('https://amarenga-backend.herokuapp.com/ifs/amarenga', {
+    await fetch('https://amarenga-version01.herokuapp.com/amarenga', {
         method: "POST",
         body: data
 
