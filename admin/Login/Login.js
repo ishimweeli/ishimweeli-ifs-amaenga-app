@@ -23,12 +23,13 @@ const handleLogin = async (e) => {
 
     })
     const login = await res.json()
+   
     console.log(login)
     sessionStorage.setItem('jwt', login.jwt)
     
 
     if (login.jwt) {window.location.href = "../dashboard/dashboard.html"}
-    // else  {window.alert("wrong email or password try again")}
+    else  {window.alert("wrong email or password try again")}
     
     // console.log(login)
 
