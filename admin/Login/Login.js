@@ -13,7 +13,7 @@ const handleLogin = async (e) => {
         password: password.value
     }
     console.log(data);
-    const res = await fetch('https://amarenga-version01.herokuapp.com/users/login', {
+    const res = await fetch(' https://amarenga-version01.herokuapp.com/users/login', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -23,9 +23,10 @@ const handleLogin = async (e) => {
 
     })
     const login = await res.json()
+    // res.cookie("jwt", login.jwt)
    
     console.log(login)
-    sessionStorage.setItem('jwt', login.jwt)
+    sessionStorage.setItem('jwt',login.jwt)
     
 
     if (login.jwt) {window.location.href = "../dashboard/dashboard.html"}
