@@ -7,7 +7,7 @@ const image = document.getElementById('image');
 var uploadField = document.getElementById("image");
 
 uploadField.onchange = function () {
-    if (this.files[ 0 ].size > 2000000) {
+    if (this.files[ 0 ].size > 1000000) {
         alert("File is too big! max 1mb");
         this.value = "";
     };
