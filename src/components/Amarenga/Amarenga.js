@@ -91,17 +91,14 @@ export default function Amarenga() {
   };
 
  
-    // setLoading(true);
-
-
     fetchData();
 
-  }, [Data]);
+  }, []);
   
   
   
-  useEffect(() => {
-    
+  useEffect((event) => {
+  
     const filtered = searchTerm
       ? Data.filter((item) =>
           item.kinyarwanda.toLowerCase().includes(searchTerm.toLowerCase())
@@ -109,6 +106,7 @@ export default function Amarenga() {
          )
       : Data;
     setFilteredData(filtered);
+  
   }, [Data, searchTerm]);
 
   const handleSearch = (event) => {
@@ -117,6 +115,11 @@ export default function Amarenga() {
     setSearchTerm(term);
   };
 
+  const handleButtonClick = () => {
+    handleSearch();
+    
+  };
+  
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -139,7 +142,8 @@ export default function Amarenga() {
           color="inherit"
           aria-label="open drawer"
           sx={{ mr: 2 }}
-            onClick={handleSearch}
+         
+            onClick={handleButtonClick}
         >
           {/* Add an icon here if you want */}
         </IconButton>
@@ -165,7 +169,7 @@ export default function Amarenga() {
             onChange={(event) => setSearchTerm(event.target.value)}
             onKeyDown={(event) => {
               if (event.key === 'Enter') {
-                handleSearch();
+                handleButtonClick();
               }
             }}
           />
