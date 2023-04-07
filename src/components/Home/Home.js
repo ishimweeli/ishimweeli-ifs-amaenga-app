@@ -4,6 +4,7 @@ import homeLogo from "../../Assets/home-bg.jpeg";
 import Particle from "../Particle";
 import Home2 from "./Home2";
 import Type from "./Type";
+import { Link } from 'react-router-dom';
 
 function Home() {
   return (
@@ -22,15 +23,22 @@ function Home() {
 
               <h1 className="heading-name">
                 We are 
-                <strong className="main-name"> GS INSTITU FILIPPO SMALDONE</strong>
+                <strong className="main-name"> GS INSTITUT FILIPPO SMALDONE</strong>
               </h1>
 
               <div style={{ padding: 50, textAlign: "left" }}>
                 <Type />
 
-                <a href="https://en.wikipedia.org/wiki/Filippo_Smaldone" target="_blank" rel="noopener noreferrer">Learn more about Saint Filippo smaldone </a>.
-             
               </div>
+              <div>
+              <Link to={{ pathname: 'https://en.wikipedia.org/wiki/Filippo_Smaldone' }} target="_blank">
+        Learn more about Saint Filippo Smaldone
+      </Link>
+              
+
+</div>
+
+
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>

@@ -34,6 +34,9 @@ function Home2() {
             <p>
               Feel free to <span className="white">connect </span>with us
             </p>
+            <p>
+             0787703798 <span className="white">or </span>gssmaldone04@gmail.com
+            </p>
             <ul className="home-about-social-links">
               {/* <li className="social-icons">
                 <a

@@ -48,6 +48,10 @@ function App() {
           <Route path="/announcement" element={<Announcement />} />
           <Route path="/dashboard" element={<FullLayout />} />
           <Route path="*" element={<Navigate to="/" />} />
+          <Route
+  path="/learn-more"
+  render={() => <Redirect to="https://en.wikipedia.org/wiki/Filippo_Smaldone" />}
+/>
         </Routes>
         <Footer />
       </div>
