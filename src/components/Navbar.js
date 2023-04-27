@@ -96,15 +96,15 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item> */}
 
-            {/* <Nav.Item>
+            <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/blog"
+                to="/dashboard"
                 onClick={() => updateExpanded(false)}
               >
-                <AiTwotoneProfile style={{ marginBottom: "2px" }} /> Blog
+                <AiTwotoneProfile style={{ marginBottom: "2px" }} /> Admin
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item>
 
  <Nav.Item>
               <Nav.Link
