@@ -5,7 +5,8 @@ import { AppBar, Toolbar, IconButton, Typography, Drawer, List, ListItem, ListIt
 import { Menu as MenuIcon, ExitToApp as LogoutIcon, Announcement as AnnouncementIcon, Person as PersonIcon, CloudUpload as UploadIcon } from '@material-ui/icons';
 import PublicationPage from './AnnouncementPage';
 import AmarengaPage from './EventPage';
-
+import { Link } from 'react-router-dom';
+import { Button } from '@material-ui/core';
 
 const drawerWidth = 240;
 
@@ -58,6 +59,7 @@ function Dashboard() {
           <Typography variant="h6" noWrap>
             Dashboard
           </Typography>
+          <Button color="inherit" component={ Link } to="/about">About</Button>
         </Toolbar>
       </AppBar>
       <Drawer
