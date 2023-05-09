@@ -29,7 +29,7 @@ export default function Amarenga() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState(Data)
 
-    const [loading, setLoading] = useState(false);
+  const [ loading, setLoading ] = useState(true);
     const [error, setError] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredData, setFilteredData] = useState(Data);

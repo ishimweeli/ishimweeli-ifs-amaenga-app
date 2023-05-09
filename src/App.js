@@ -9,7 +9,8 @@ import Login from "./components/Admin/Login";
 import Amarenga from "./components/Amarenga/Amarenga";
 import Blog from "./components/Blog/Blog";
 import Announcement from "./components/Announcement/Announcement";
-import FullLayout from "./components/Admin/Dashboard/FullLayout";
+import Dashboard from "./components/Admin/Dashboard/Dashboard";
+import AnnouncementPage from "./components/Admin/Dashboard/AnnouncementPage";
 import {
   BrowserRouter as Router,
   Route,
@@ -20,6 +21,12 @@ import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
+// import AnnouncementPage from './AnnouncementPage';
+// import ImagePage from './ImagePage';
+// import EventPage from './EventPage';
+// import ProfilePage from './ProfilePage';
 
 function App() {
   const [load, upadateLoad] = useState(true);
@@ -45,9 +52,10 @@ function App() {
           <Route path="/amarenga" element={<Amarenga />} />
           <Route path="/login" element={<Login />} />
           <Route path="/blog" element={<Blog />} />
-          <Route path="/announcement" element={<Announcement />} />
-          <Route path="/dashboard" element={<FullLayout />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/announcement" element={ <Announcement /> } />
+          <Route path="/announcements" element={ <AnnouncementPage /> } />
+          <Route path="/dashboard" element={ <Dashboard /> } />
+          <Route path="*" element={ <Navigate to="/" /> } />
           <Route
   path="/learn-more"
   render={() => <Redirect to="https://en.wikipedia.org/wiki/Filippo_Smaldone" />}
