@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -96,15 +96,15 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item> */}
 
-            {/* <Nav.Item>
+            <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/blog"
+                to="/announcement"
                 onClick={() => updateExpanded(false)}
               >
-                <AiTwotoneProfile style={{ marginBottom: "2px" }} /> Blog
+                <AiTwotoneProfile style={ { marginBottom: "2px" } } /> Publications
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item> 
 
  <Nav.Item>
               <Nav.Link
@@ -116,15 +116,15 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-              {/* <Nav.Item>
+            <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/login"
+                to="/dashboard"
                 onClick={() => updateExpanded(false)}
               >
                 < AiOutlineUser style={{ marginBottom: "2px" }} /> Admin
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item> 
 
 
           </Nav>
