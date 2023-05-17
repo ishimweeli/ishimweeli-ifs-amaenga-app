@@ -20,6 +20,9 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import CircularProgress from '@mui/material/CircularProgress';
+
+
 
 
 export default function Amarenga() {
@@ -33,6 +36,27 @@ export default function Amarenga() {
     const [error, setError] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
     const [filteredData, setFilteredData] = useState(Data);
+
+
+  function CircularIndeterminate() {
+    return (
+      <Box
+        sx={ {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+          color: 'white',
+        } }
+      >
+        <CircularProgress color="inherit" />
+        <Typography variant="h6" component="div" sx={ { marginTop: '10px' } }>
+          Please wait...
+        </Typography>
+      </Box>
+    );
+  }
 
 
   const Search = styled('div')(({ theme }) => ({
@@ -121,7 +145,7 @@ export default function Amarenga() {
   };
   
   if (loading) {
-    return <div>Loading...</div>;
+    return CircularIndeterminate();
   }
 
   if (error) {
@@ -184,26 +208,25 @@ export default function Amarenga() {
       
     {filteredData ? (
   filteredData.map((item) => (
-    <ImageListItem key={item.id} sx={{ width: "30%", height: "5%", display: 'flex', flexGrow: 1}} className="image-list-item">
+    <ImageListItem key={ item.id } sx={ { width: '30%', height: '10vh', display: 'flex', flexDirection: 'column' } }>
       <img
-        src={`${item.avatar}?w=248&fit=crop&auto=format`}
-        srcSet={`${item.avatar}?w=248&fit=crop&auto=format&dpr=2 1x`}
-        alt={item.title}
+        src={ `${item.avatar}?w=248&fit=crop&auto=format` }
+        srcSet={ `${item.avatar}?w=248&fit=crop&auto=format&dpr=2 1x` }
+        alt={ item.title }
         loading="lazy"
-        sx={{ flex: 1, width: '20%', height: '5%' }}
-        className="image-list-item"
+        sx={ { flex: 1, width: '100%', height: '20%' } }
       />
       <ImageListItemBar
-        title={item.kinyarwanda}
-        subtitle={<span style={{color: 'white'}}>{item.english}</span>}
+        title={ item.kinyarwanda }
+        subtitle={ <span style={ { color: 'white' } }>{ item.english }</span> }
         position="below"
-        style={{color: 'white'}}
+        style={ { color: 'white' } }
       />
     </ImageListItem>
   ))
 ) : (
   Data.map((item) => (
-    <ImageListItem key={item.id} sx={{ display: 'flex', flexGrow: 1}} className="image-list-item">
+    <ImageListItem key={ item.id } sx={ { display: 'flex', flexGrow: 1, width: '30%', height: '10vh', display: 'flex', flexDirection: 'column' } } className="image-list-item">
       <img
         src={`${item.avatar}?w=248&fit=crop&auto=format`}
         srcSet={`${item.avatar}?w=248&fit=crop&auto=format&dpr=2 1x`}
